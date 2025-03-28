@@ -1,0 +1,20 @@
+name: hello-world
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+    hello-world:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
+
+            - name: Run hello world script
+              run: |
+                echo "$(cat hello_world.txt)"
+                echo "This is a GitHub Actions workflow."
+                echo "It runs on every push to the main branch."
+                echo "You can customize it to fit your needs."
